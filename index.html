@@ -20,7 +20,7 @@
 	<!-- Javascript Framework (e.g., vue.js) (ADD HERE) -->
 	<!-- production version, optimized for size and speed -->
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-	<script scr="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 	</script>
 </head>
@@ -31,7 +31,7 @@
 	    <div class="header">
 
 	      <div class="container">
-	        <h1 id="app_title">IMDB + Maritza's top 8 Movies</h1>
+	        <h1 id="app_title">{{title}}</h1>
 	      </div>
 
 	    </div>
@@ -51,7 +51,8 @@
 						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
 						<p class="runtime">Runtime: {{movies[0].runtime}}</p>
 						<p class="released">Released: {{movies[0].released}} | Rated: {{movies[0].rating}}</p>
-						<p class="websites">Websites: <a v-bind:href="movies[0].imdb"></a> | <a v-bind:href="movies[0].website"></a></p>
+						<p class="websites">Websites: <a v-bind:href="movies[0].imdb">IMDB</a> |
+							<a v-bind:href="movies[0].website">Offical</a></p>
 
 			            <div class="social">
 			              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[0].likes}}</p>
@@ -66,7 +67,7 @@
 	    <div class="footer">
 	      <div class="container">
 			<a v-bind:href="https://maritzaalamo.github.io/alamo-p3/" id="github" class="btn btn-lg btn-warning">
-				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>Maritza github
+				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}}
 	  		</a>
 	      </div>
 	    </div>
