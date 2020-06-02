@@ -41,7 +41,13 @@ const vue_app = new Vue({
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
       },
       methods: {
-        getMonthText(dateArray)
+        getMonthText(dateArray){
+
+          }
+        like(index)
+        dislike(index)
+        posterClick(index)
+        timeText(minutes)
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
       }
 })
