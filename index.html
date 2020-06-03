@@ -47,8 +47,11 @@
 	        <div class="col-md-6">
 	            <div class="thumbnail">
 
-						<img class="poster" v-bind:src="movies[0].posters[0]" />
-						<div class="imageInfo">{{movies[0].posterIndex}}</div>
+						<img class="poster" v-bind:src="movies[0].posters[0]">
+						<li v-for="(item, index) in items">
+	 						{{ parentMessage }} - {{ index }} - {{ item.message }}
+ 						</li>
+						<div class="imageInfo">Poster 1 of 3</div>
 
 						<p class="title">{{movies[0].title}} ({{movies[0].country}})</p>
 						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
@@ -58,9 +61,16 @@
 							<a v-bind:href="movies[0].website">Offical</a></p>
 
 			            <div class="social">
-			              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[0].likes}}</p>
-			              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[0].dislikes}} </p>
-			            </div>
+										<p class="likes">
+											<button v-on:click="likes">
+											<i class="fa fa-thumbs-up" aria-hidden="true"></i>900</p>
+											</button>
+			              <p class="dislikes">
+										<button v-on:click="dislikes">
+											<i class="fa fa-thumbs-down" aria-hidden="true"></i>900</p>
+										</button>
+
+									</div>
 	            </div>
 	        </div>
 

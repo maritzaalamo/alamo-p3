@@ -44,10 +44,18 @@ const vue_app = new Vue({
         getMonthText(dateArray){
 
           }
-        like(index)
-        dislike(index)
-        posterClick(index)
-        timeText(minutes)
+          likes(){
+            control: 1;
+          }
+          dislikes(){
+            control: 1;
+          }
+          posterClick(){
+            
+          }
+          timeText(minutes)
+
+
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
       }
 })
