@@ -24,71 +24,56 @@
 
 	</script>
 </head>
+	<body>
+		<div id="vue_app" class="container">
 
-  <body id="vue_app">
-		<ul>
-			<li v-for="movie in movies">{{ movie }}</li>
-		</ul>
-	<div class="container">
+		    <div class="header">
 
-	    <div class="header">
+		      <div class="container">
+		        <h1 id="app_title">{{title}}</h1>
+		      </div>
 
-	      <div class="container">
-	        <h1 id="app_title">{{title}}</h1>
-	      </div>
-
-	    </div>
+		    </div>
 
 
-	    <div class="main">
+		    <div class="main">
 
-	      <div class="container">
+		      <div class="container">
 
-	        <div class="col-md-6">
-	            <div class="thumbnail">
+		        <div class="col-md-6" v-for="(movie, index) in movies">
+		            <div class="thumbnail">
 
-						<img class="poster" v-bind:src="movies[0].posters[0]">
-						<li v-for="(item, index) in items">
-	 						{{ parentMessage }} - {{ index }} - {{ item.message }}
- 						</li>
-						<div class="imageInfo">Poster 1 of 3</div>
+							<img class="poster" v-on:click="{{posterClick(index)}}" v-bind:src="movie.posters[movie.posterindex]"/>
+							<div class="imageInfo">Poster {{movie.posterindex + 1}} of {{movie.posters.length}}</div>
 
-						<p class="title">{{movies[0].title}} ({{movies[0].country}})</p>
-						<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
-						<p class="runtime">Runtime: {{movies[0].runtime}}</p>
-						<p class="released">Released: {{movies[0].released}} | Rated: {{movies[0].rating}}</p>
-						<p class="websites">Websites: <a v-bind:href="movies[0].imdb">IMDB</a> |
-							<a v-bind:href="movies[0].website">Offical</a></p>
+							<p class="title">{{movie.title}} ({{movie.country}})</p>
+							<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movie.iscore}} </p>
+							<p class="runtime">Runtime: {{timeText(movie.runtime)}}</p>
+							<p class="released">Released: {{getMonthText(movie.released)}} | Rated: {{movie.rating}} </p>
+							<p class="websites">Websites: <a v-bind:href="movie.imdb">IMDB</a> | <a v-bind:href="movie.website">Official</a></p>
 
-			            <div class="social">
-										<p class="likes">
-											<button v-on:click="likes">
-											<i class="fa fa-thumbs-up" aria-hidden="true"></i>900</p>
-											</button>
-			              <p class="dislikes">
-										<button v-on:click="dislikes">
-											<i class="fa fa-thumbs-down" aria-hidden="true"></i>900</p>
-										</button>
+				            <div class="social">
+				              <p class="likes" v-on:click="{{like(index)}}"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movie.likes}}</p>
+				              <p class="dislikes" v-on:click="{{dislike(index)}}"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movie.dislikes}}</p>
+				            </div>
+		            </div>
+		        </div>
 
-									</div>
-	            </div>
-	        </div>
+		      </div>
+		    </div>
 
-	      </div>
-	    </div>
+		    <div class="footer">
+		      <div class="container">
+				<a id="github" class="btn btn-lg btn-warning" v-bind:href="github">
+					<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}}
+		  		</a>
+		      </div>
+		    </div>
+		</div>
 
-	    <div class="footer">
-	      <div class="container">
-			<a v-bind:href="https://maritzaalamo.github.io/alamo-p3/" id="github" class="btn btn-lg btn-warning">
-				<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i>{{owner}}
-	  		</a>
-	      </div>
-	    </div>
-	</div>
-
-  	<!-- This load the Vue.js code -->
-	<script type="text/javascript" src="site.js"></script>
+	  	<!-- This load the Vue.js code -->
+		<script type="text/javascript" src="site.js"></script>
 
 
-</body>
-</html>
+	</body>
+	</html>

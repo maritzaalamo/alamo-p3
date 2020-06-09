@@ -30,7 +30,7 @@ body {
     padding: 50px;
     border-radius: 0;
     margin-bottom: 50px;
-    
+
 }
 .thumbnail img {
     margin-top: 10px;
@@ -93,6 +93,8 @@ body {
 /* This shapes your like and dislike buttons */
 .likes,
 .dislikes {
+  color: white;
+  background-color:#008700;
     cursor: pointer;
     display: inline-block;
     font-size: 15px;
@@ -105,6 +107,8 @@ body {
     font-weight: 200;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background 500ms;
+    background-color:#f65a5b;
+    color:white;
 }
 
 /* This makes sure your Github Button is centered */
@@ -119,8 +123,10 @@ body {
 }
 
 /* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
-
-
-
-
-
+.likes,
+.dislikes {
+  color:#008700;
+  background-color:#9edd87;
+  color:#F65A5B;
+  background-color:#fdd6d6;
+}

@@ -41,21 +41,75 @@ const vue_app = new Vue({
             /* ADD ADDITIONAL VARIABLES FOR STEP 3 HERE */
       },
       methods: {
-        getMonthText(dateArray){
+        getMonthText: function(dateArray)
+      {
+        var monthName;
+        var releaseDate;
 
-          }
-          likes(){
-            control: 1;
-          }
-          dislikes(){
-            control: 1;
-          }
-          posterClick(){
-            
-          }
-          timeText(minutes)
+        switch (dateArray[1]) {
+          case 1: monthName = 'January';
+            break;
+          case 2: monthName = 'February';
+            break;
+          case 3: monthName = 'March';
+            break;
+          case 4: monthName = 'April';
+            break;
+          case 5: monthName = 'May';
+            break;
+          case 6: monthName = 'June';
+            break;
+          case 7: monthName = 'July';
+            break;
+          case 8: monthName = 'August';
+            break;
+          case 9: monthName = 'September';
+            break;
+          case 10: monthName = 'October';
+            break;
+          case 11: monthName = 'November';
+            break;
+          case 12: monthName = 'December';
+            break;
+          default: monthName = 'N/A';
+        }
 
+        releaseDate = monthName + ' ' + dateArray[2] + ', ' + dateArray[0];
+        return releaseDate;
+      },
+      // B.	like(index)
+      like: function(index)
+      {
+        this.movies[index].likes += 1;
+      },
+      // C.	dislike(index)
+      dislike: function(index)
+      {
+        this.movies[index].dislikes -= 1;
+      },
+      // D.	posterClick(index)
+      posterClick: function(index)
+      {
+        var currentPosterIndex = this.movies[index].posterindex;
+        var currentPoster = this.movies[index].posters.length - 1;
 
+        if(currentPosterIndex < currentPoster)
+        {
+          this.movies[index].posterindex += 1;
+        }
+        else
+        {
+          this.movies[index].posterindex = 0;
+        }
+
+      },
+      // E.	timeText(minutes) – a function called “timeText” that accepts the parameter “minutes” (Number). It should convert “minutes” (an integer) to a String of hours and minutes. For example, “timeText(61)” should return “1h 1m”, “timeText(145)” should return “2h 25m”, and “timeText(180)” should return “3h 0m”.
+      timeText: function(minutes)
+      {
+        var hours = Math.floor(minutes/60);
+        var mins = minutes%60;
+        return (hours + "h " + mins + "m");
+      }
             /* ADD FUNCTIONS/METHODS FOR STEP 7 HERE */
       }
 })
