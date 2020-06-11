@@ -68,5 +68,47 @@
             "likes": 812,
             "dislikes": 101,
             "posterindex": 0
+      },
+      {
+            "title": "ATL",
+            "iscore": 6.1,
+            "rating": "PG-13",
+            "runtime": 105,
+            "released": [2006, 3, 28],
+            "country": "USA",
+            "posters": ["img/atl.jpg", "img/atl2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0466856/",
+            "website": "https://www.warnerbros.com/movies/atl/",
+            "likes": 820,
+            "dislikes": 125,
+            "posterindex": 0
+      },
+      {
+            "title": "Grease",
+            "iscore": 7.2,
+            "rating": "PG-13",
+            "runtime": 111,
+            "released": [1978, 6, 13],
+            "country": "USA",
+            "posters": ["img/grease.jpg", "img/grease2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0077631/",
+            "website": "https://www.paramount.com/movies/grease",
+            "likes": 900,
+            "dislikes": 127,
+            "posterindex": 0
+      },
+      {
+            "title": "The Breakfast Club",
+            "iscore": 7.9,
+            "rating": "PG-13",
+            "runtime": 97,
+            "released": [1985, 2, 15],
+            "country": "USA",
+            "posters": ["img/breakfastclub.jpg", "img/breakfastclub2.jpg"],
+            "imdb": "https://www.imdb.com/title/tt0088847/",
+            "website": "https://www.bitchute.com/video/9i1I6ERxqujX/",
+            "likes": 1000,
+            "dislikes": 207,
+            "posterindex": 0
       }
 ]
